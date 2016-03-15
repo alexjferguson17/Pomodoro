@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div class="app-container">
+	<div ng-show="main.state == 'paused'">
+		<h1>{{main.timer}}</h1>
+		<button ng-click="main.startTimer()">Start</button>
+	</div>
+	<div ng-show="main.state == 'going'">
+		<h1>{{main.timer}}</h1>
+		<button ng-click="main.reset()">Reset</button>
+	</div>
+	<div ng-show="main.state == 'breaktime'">
+		<h1>{{main.break}}</h1>
+		<button ng-click="main.startBreak()">Break</button>
+	</div>
+</div>
+</body>
+</html>

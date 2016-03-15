@@ -1,0 +1,25 @@
+body {
+	background-color: #FCBE32;
+	font-family: 'Open Sans', sans-serif;
+
+	h1 {
+		text-align: center;
+		font-weight: 300;
+		font-size: 10em;
+		color: white;
+		margin-bottom: 10px;
+	}
+
+	button {
+		display: block;
+		margin: 0 auto;
+		border-radius: 60px;
+		width: 275px;
+		height: 70px;
+		font-size: 1.8em;
+		color: white;
+		text-transform: uppercase;
+		background-color: #F94E3F;
+		border: none;
+	}
+}
