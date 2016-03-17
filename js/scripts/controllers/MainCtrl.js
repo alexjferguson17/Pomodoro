@@ -1,8 +1,10 @@
 (function() {
   function MainCtrl($interval) {
-    TIMER = 5;
+    TIMER = 1;
+    
 
 	 	var vm = this;
+    vm.count = 2;
 
     vm.timer = TIMER;
     vm.break = 2;
@@ -11,6 +13,10 @@
     var zebra, lion;
 
     this.startTimer = function(){
+      if(vm.count == 4){
+          vm.count = 0
+      }
+
       console.log('Click Works');
       vm.state = "going"
       zebra = $interval(countDown, 1000);
@@ -24,6 +30,10 @@
       console.log("Interval was called")
       if(vm.timer == 0){
         vm.state = "breaktime"
+
+        vm.count += 1;  
+
+        
         $interval.cancel(zebra)
         vm.timer = TIMER;
       }else{
@@ -37,6 +47,9 @@
         vm.state = "paused"
         $interval.cancel(lion)
         vm.break = 2;
+        if(vm.count == 3) {
+          vm.break = 10;
+        }
       }else {
         vm.break --;
       }
