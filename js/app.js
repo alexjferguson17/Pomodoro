@@ -16,6 +16,6 @@
 
 
      angular
-     .module('blocPom', ['ui.router'])
+     .module('blocPom', ['ui.router', 'firebase'])
      .config(config);
  })();

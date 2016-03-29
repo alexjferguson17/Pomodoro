@@ -1,1 +1,1 @@
-!function(){function e(e,l){l.html5Mode({enabled:!0,requireBase:!1}),e.state("landing",{url:"/",controller:"MainCtrl as main",templateUrl:"templates/main.html"})}angular.module("blocPom",["ui.router"]).config(e)}();
+!function(){function e(e,l){l.html5Mode({enabled:!0,requireBase:!1}),e.state("landing",{url:"/",controller:"MainCtrl as main",templateUrl:"templates/main.html"})}angular.module("blocPom",["ui.router","firebase"]).config(e)}();

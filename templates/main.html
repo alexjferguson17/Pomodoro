@@ -9,19 +9,29 @@
 	<div class="wrapper">
 		<div ng-show="main.state == 'paused'">
 			<h1>{{main.timer | timecode}}</h1>
-			<button ng-click="main.startTimer()">Start</button>
+			<button class="mainBtn" ng-click="main.startTimer()">Start</button>
 		</div>
 		<div ng-show="main.state == 'going'">
 			<h1>{{main.timer | timecode}}</h1>
-			<button ng-click="main.reset()">Reset</button>
+			<button class="mainBtn" ng-click="main.reset()">Reset</button>
 		</div>
 		<div ng-show="main.state == 'breaktime'">
 			<h1>{{main.break | timecode}}</h1>
-			<button ng-click="main.startBreak()">Break</button>
+			<button class="mainBtn" ng-click="main.startBreak()">Break</button>
 		</div>
 		<div>
 			<p>Complete Pomodoros: {{main.count}}</p>
 		</div>
+		<div>
+			<input id="taskInput" type="text" ng-model="main.newTask" placeholder="Enter A Task">
+			<button id="addTaskBtn" ng-click="main.doSomething()">Enter</button>
+		</div>
+			<ul>
+				<li ng-repeat="task in main.tasks | orderBy : 'createdAt' : true">
+					{{task.name}}|{{task.createdAt | date : "short" }}
+					<button ng-click="main.tasks.$remove(task)">X</button>
+				</li>
+			</ul>
 	</div>
 </div>	
 </body>

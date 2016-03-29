@@ -1,5 +1,5 @@
 (function() {
-  function MainCtrl($interval) {
+  function MainCtrl($interval, $firebaseArray) {
     TIMER = 10;
     
     var mySound = new buzz.sound( "/sounds/ding.mp3", {
@@ -62,10 +62,20 @@
       vm.timer = TIMER;
       $interval.cancel(zebra);
       vm.state = "paused";
-   };   
+    };
+
+    vm.doSomething = function(){
+      vm.tasks.$add({name: vm.newTask, createdAt: Date.now()})
+
+    };  
+  
+
+    var firebaseRef = new Firebase('https://brilliant-torch-5995.firebaseio.com/');
+    window.foo = vm.tasks = $firebaseArray(firebaseRef);
+
   }
 
   angular
       .module('blocPom')
-      .controller('MainCtrl', ['$interval', MainCtrl]);
+      .controller('MainCtrl', ['$interval', '$firebaseArray', MainCtrl]);
 })();

@@ -7,7 +7,7 @@ body {
     font-size: 10em;
     color: white;
     margin-bottom: 10px; }
-  body button {
+  body .mainBtn {
     display: block;
     margin: 0 auto;
     border-radius: 60px;
@@ -24,3 +24,36 @@ body {
     color: white;
     font-size: 1.1em;
     margin-top: 20px; }
+  body #taskInput {
+    display: block;
+    margin: 100px auto;
+    border: 0;
+    border-bottom: 2px solid white;
+    width: 15%;
+    font-size: 22px;
+    outline: none;
+    background: none;
+    color: white; }
+  body #addTaskBtn {
+    display: block;
+    margin: 0 auto; }
+  body ::-webkit-input-placeholder {
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    opacity: 0.5; }
+  body :-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+    text-transform: uppercase; }
+  body ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+    text-transform: uppercase; }
+  body :-ms-input-placeholder {
+    color: white;
+    text-transform: uppercase; }
+
+ul {
+  text-align: center;
+  list-style: none; }
